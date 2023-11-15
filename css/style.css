@@ -226,6 +226,10 @@ header nav a:hover{
         border-bottom-right-radius: 10px;
         font-size: 13px;
     }
+    .fa-map-location-dot{
+        margin-left: 20px;
+        font-size: 31px;
+    }
 }
 
 /*about us section*/
