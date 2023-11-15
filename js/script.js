@@ -16,26 +16,31 @@ menuIcon.onclick= function(){
 }
 
 
-// Add this JavaScript code
+//for the accordion
 document.addEventListener('DOMContentLoaded', function () {
-    const accordions = document.querySelectorAll('.accordion-item');
+    const accordionItems = document.querySelectorAll('.accordion-item');
 
-    accordions.forEach(function (accordion) {
-        accordion.addEventListener('click', function () {
-            const content = this.nextElementSibling;
+    accordionItems.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+      const content = item.querySelector('.accordion-content');
+      const toggleBtn = item.querySelector('.toggle-btn');
 
-            if (content.style.maxHeight) {
-                // Close the accordion
-                content.style.maxHeight = null;
-                content.style.opacity = 0;
-            } else {
-                // Open the accordion
-                content.style.maxHeight = content.scrollHeight + 'px';
-                content.style.opacity = 1;
-            }
+      header.addEventListener('click', function () {
+        accordionItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
         });
-    });
-});
 
+        item.classList.toggle('active');
+
+        if (item.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0';
+        }
+      });
+    });
+  });
 
 

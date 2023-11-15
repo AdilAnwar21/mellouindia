@@ -230,7 +230,7 @@ header nav a:hover{
 
 /*about us section*/
 .content-section{
-
+    /* background: linear-gradient(90deg, rgba(191,159,211,1) 0%, rgba(193,165,211,1) 1%, rgba(196,172,212,1) 17%, rgba(255,255,255,1) 62%, rgba(183,143,209,1) 88%, rgba(186,150,210,1) 100%, rgba(192,162,211,1) 100%); */
     padding:50px 10px 0 10px;  
 }
 
@@ -259,6 +259,7 @@ header nav a:hover{
     width: 100%;
     height: 100vh; /* Adjust the height as needed */
     overflow: hidden; /* Hide any overflow from child elements */
+    background: radial-gradient(circle, rgba(183,143,209,1) 0%, rgba(255,255,255,1) 0%, rgba(183,143,209,1) 100%, rgba(255,255,255,1) 100%);
 }
 
 .bottom-left-image {
@@ -308,48 +309,74 @@ header nav a:hover{
 /* accordion  */
 /* Add this to your existing CSS */
 
-.accordion {
+.wrapper {
     width: 70%;
-    margin: 20px auto;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #B78FD1;
-}
-
-.accordion-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #B78FD1;
-    color: #fff;
-    cursor: pointer;
-    border-bottom: 1px solid #B78FD1;
-    border-radius: 10px;
-}
-
-.accordion-title {
-    padding: 10px;
-    flex-grow: 1;
-}
-
-.accordion-content {
-    padding: 10px;
+    margin: auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    @media (max-width: 768px) {
+      width: 70%;
+      padding: 0 0.3rem;
+    }
+  }
+  input[type='radio'] {
     display: none;
+    &:checked + .item {
+      .title {
+        color: #fff;
+        border-color: #b78fd1;
+        background-color: #b78fd1;
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+      .content {
+
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s, opacity 0.7s;
+      }
+    }
+  }
+  .item {
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 26px;
+ 
+  }
+  .title {
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.3rem;
+    color: #b78fd1;
+    border: 1px solid ;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    /* color: #fff; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:after {
+      content: '\25bc';
+      display: inline-block;
+      font-size: 12px;
+    }
+  }
+  .content {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 0.3rem;
+    line-height: 1.6;
+    color: #000;
+    border: 1px solid;
+    border-width: 0 1px;
+
+    height: 0;
     opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.accordion-item input[type="checkbox"]:checked + .accordion-title + .arrow:before {
-    content: '^';
-}
-
-.accordion-item input[type="checkbox"]:not(:checked) + .accordion-title + .arrow:before {
-    content: '>';
-}
-
-.arrow:before {
-    font-size: 16px;
-    margin-right: 10px;
-}
+    visibility: hidden;
+    transition: all 0.2s; 
+  }

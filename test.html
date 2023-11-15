@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+    }
+
+    .accordion-item {
+      border: 1px solid #ccc;
+      margin-bottom: 5px;
+      overflow: hidden; /* Hide overflow for smooth slide animations */
+    }
+
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+      background-color: #f1f1f1;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 10px;
+      transition: max-height 0.3s ease-out; /* Add a transition for smooth slide animations */
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+      max-height: 200px; /* Adjust the max-height as needed */
+    }
+
+    .toggle-btn {
+      transition: transform 0.3s ease; /* Add a transition for smooth button animations */
+    }
+
+    .accordion-item.active .toggle-btn {
+      transform: rotate(180deg); /* Rotate the button when the content is expanded */
+    }
+  </style>
+</head>
+<body>
+
+<div class="accordion">
+  <div class="accordion-item">
+    <div class="accordion-header">
+      Item 1
+      <button class="toggle-btn">></button>
+    </div>
+    <div class="accordion-content">
+      Content for Item 1
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      Item 2
+      <button class="toggle-btn">></button>
+    </div>
+    <div class="accordion-content">
+      Content for Item 2
+    </div>
+  </div>
+
+  <!-- Add more accordion items as needed -->
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+      const content = item.querySelector('.accordion-content');
+      const toggleBtn = item.querySelector('.toggle-btn');
+
+      header.addEventListener('click', function () {
+        accordionItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+
+        item.classList.toggle('active');
+
+        if (item.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
