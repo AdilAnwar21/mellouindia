@@ -8,7 +8,7 @@
 body{
     font-family: 'Poppins', sans-serif;
     min-height: 3000px;
-    background: linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(183,143,209,1) 0%, rgba(249,249,249,1) 100%);
+    /*   */
 }
 
 header{
@@ -261,10 +261,13 @@ header nav a:hover{
 .wave-section {
     position: relative;
     width: 100%;
-    height: 100vh; /* Adjust the height as needed */
+    height: 100%; /* Adjust the height as needed */
     overflow: hidden; /* Hide any overflow from child elements */
     /* background: radial-gradient(circle, rgba(183,143,209,1) 0%, rgba(255,255,255,1) 0%, rgba(183,143,209,1) 100%, rgba(255,255,255,1) 100%); */
+    /* margin-bottom: -350px; */
+
 }
+
 
 .bottom-left-image {
     width: 100%;
@@ -384,3 +387,195 @@ header nav a:hover{
     visibility: hidden;
     transition: all 0.2s; 
 }
+
+
+/* testimonial sections  */
+.testimonials{
+    background-color: #b78fd1;
+    height: 100px;
+}
+
+.testimonials h1{
+    color: #fff;
+    text-align: center;
+    font-size: medium;
+    padding-top: 10px;
+    font-weight: 600;
+}
+
+
+
+
+/* most unusual website design ever */
+.bottom-image-section {
+    
+    position: relative;
+    height: auto; /* Set the initial height as a percentage of the viewport height */
+    /* overflow: hidden; */
+    padding-top: 28px;
+}
+
+.top-left-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.products-text{
+    padding-bottom: 5px;
+    font-size: x-large;
+    padding-left: 150px;
+    font-weight: 600;
+    color: #b78fd1;
+}
+.tried-text{
+    font-size: x-large;
+    font-weight: 600;
+    padding-left: 150px;
+}
+
+.introducing{
+    font-size: x-large;
+    font-weight: 600;
+    padding-left: 150px;
+}
+@media (min-width:1800px) {
+    .products-text{
+        font-size: xxx-large;
+    }
+    .tried-text{
+        font-size: xxx-large;
+        padding-bottom: 20px;
+    }
+    .introducing{
+        font-size: xxx-large;
+    }
+    .third-image{
+        top: 620%;
+    }
+}
+
+@media (max-width:1300px) {
+    .products-text{
+        padding-left: 100px;
+    }
+    .tried-text{
+        padding-left: 100px;
+    }
+    .introducing{
+        padding-left: 100px;
+    }
+}
+
+@media (max-width:1000px) {
+    .products-text{
+        padding-left: 58px;
+    }
+    .tried-text{
+        padding-left: 58px;
+    }
+    .introducing{
+        padding-left: 58px;
+    }
+}
+
+@media (max-width:800px) {
+    .products-text{
+        padding-left: 40px;
+        font-size: larger;
+    }
+    .tried-text{
+        padding-left: 40px;
+        font-size: larger;
+    }
+    .introducing{
+        padding-left:40px;
+        font-size: larger;
+    }
+}
+
+@media (max-width:540px) {
+    .products-text{
+        padding-left: 10px;
+        font-size: small;
+    }
+    .tried-text{
+        padding-left: 10px;
+        font-size: small;
+    }
+    .introducing{
+        padding-left:10px;
+        font-size: small;
+    }
+}
+
+
+
+.bottom-image-section img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+}
+
+.additional-image {
+    position: absolute;
+    top: 300%; /* Adjust the vertical position as needed */
+    left:50%; /* Adjust the horizontal position as needed */
+    max-width: 47%; /* Set the maximum width for the additional image */
+    height: auto;
+} 
+
+.third-image{
+    top:500%;
+}
+@media (max-width:1440px) {
+    .third-image{
+        top: 220%;
+    }
+}
+
+@media (max-width:600px) {
+    .third-image{
+        top: 275%;
+    }
+}
+
+ 
+/* image carousel */
+/* .auto-image-carousel {
+    position: relative;
+    overflow: hidden;
+    margin-top: 1475px;
+}
+
+.top-left-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.top-left-image {
+    width: 100px; 
+    height: auto;
+}
+
+.image-carousel-container {
+    overflow: hidden;
+    margin-top: 54px;
+    margin-left: 50px;
+}
+
+.image-carousel {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-image {
+    width: 100%; 
+    height: auto;
+} */
+
