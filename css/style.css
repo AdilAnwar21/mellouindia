@@ -354,7 +354,7 @@ header nav a:hover{
   .title {
     padding: 0.1rem 0.3rem;
     border-radius: 0.3rem;
-    color: #b78fd1;
+    color: #fff;
     border: 1px solid ;
     font-weight: bold;
     cursor: pointer;
@@ -383,4 +383,4 @@ header nav a:hover{
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s; 
-  }
+}
