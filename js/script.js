@@ -163,3 +163,23 @@ srFooter.reveal('.footer img', {
 });
 
 
+//back to top button
+document.addEventListener("DOMContentLoaded", function() {
+    var backToTopButton = document.getElementById("backToTopBtn");
+
+    window.addEventListener("scroll", function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+            backToTopButton.style.opacity = 1;
+        } else {
+            backToTopButton.style.opacity = 0;
+        }
+    });
+
+    backToTopButton.addEventListener("click", function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    });
+});
+
+
