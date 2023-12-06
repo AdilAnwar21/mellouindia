@@ -707,3 +707,25 @@ header nav a:hover{
 footer img{
     width: 100%;
 }
+
+/* backtotop button  */
+.back-to-top{
+    z-index: 1000001;
+    position: fixed;
+    left: 90%;
+    top: 90%;
+    color: #fff;
+    background-color: #bb9ecf;
+    height: 35px;
+    width: 35px;
+    padding-left: 12px;
+    padding-top: 5px;
+    border-radius: 12%;
+    cursor: pointer;
+}
+
+@media (max-width:550px) {
+    .back-to-top{
+        left: 85%;
+    }
+}
